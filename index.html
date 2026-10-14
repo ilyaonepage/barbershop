@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>СЕВЕР BARBERSHOP — мужские стрижки и борода в Ростове-на-Дону</title>
+<meta name="description" content="Мужские стрижки, fade и оформление бороды. Понятные цены, запись через Telegram. Демонстрационный сайт.">
+<meta name="theme-color" content="#121212">
+<meta property="og:title" content="СЕВЕР BARBERSHOP">
+<meta property="og:description" content="Мужские стрижки и оформление бороды в Ростове-на-Дону.">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="demo">Демонстрационный сайт: цены, адрес, мастера и контакты вымышлены</div>
+<header>
+ <div class="wrap bar">
+  <a class="logo" href="#top" aria-label="СЕВЕР BARBERSHOP, в начало"><span>С</span>ЕВЕР</a>
+  <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  <nav id="nav" aria-label="Основная навигация">
+   <a class="l" href="#services">Услуги</a><a class="l" href="#masters">Мастера</a><a class="l" href="#booking">Запись</a><a class="l" href="#contacts">Адрес</a>
+   <a class="tel" id="navTel" href="#"></a>
+  </nav>
+  <a class="btn sm" href="#booking" data-book>Записаться</a>
+ </div>
+</header>
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <p class="kicker" id="heroCity"></p>
+   <h1>Чёткая форма.<br><em>Без суеты.</em></h1>
+   <p class="lead">Мужские стрижки, fade и оформление бороды. Работаем по записи, цены на сайте — без сюрпризов в кассе.</p>
+   <div class="cta"><a class="btn" href="#booking" data-book>Записаться</a><a class="btn ghost" href="#services">Смотреть прайс</a></div>
+   <div class="facts"><span id="heroFrom"></span><span>3 мастера</span><span id="heroHours"></span></div>
+  </div>
+  <div class="art" role="img" aria-label="Иллюстрация: кресло барбера, зеркало и машинка для стрижки">
+   <img src="images/hero-chair.svg" width="400" height="500" alt="" fetchpriority="high">
+  </div>
+ </div>
+</section>
+
+<section id="services" aria-labelledby="hs">
+ <div class="wrap rv">
+  <h2 id="hs">Услуги и цены</h2>
+  <p class="lead">Выберите услугу — она сразу попадёт в форму записи вместе с ценой.</p>
+  <div class="tabs" role="tablist" id="tabs" aria-label="Категории услуг"></div>
+  <div id="list" role="tabpanel"></div>
+  <p class="note" style="margin-top:16px">Цены демонстрационные. Итоговую стоимость подтверждает администратор.</p>
+ </div>
+</section>
+
+<section id="masters" aria-labelledby="hm">
+ <div class="wrap rv">
+  <h2 id="hm">Мастера</h2>
+  <p class="lead">Трое мастеров с разной специализацией. Не знаете, к кому — выберите «Любой мастер».</p>
+  <div class="grid3" id="mgrid"></div>
+ </div>
+</section>
+
+<section id="booking" aria-labelledby="hb">
+ <div class="wrap two rv">
+  <div>
+   <h2 id="hb">Как записаться</h2>
+   <ol class="steps">
+    <li><div><b>Выберите услугу</b><span>В прайсе или прямо в форме.</span></div></li>
+    <li><div><b>Выберите мастера</b><span>Или оставьте «Любой мастер».</span></div></li>
+    <li><div><b>Согласуйте время</b><span>Сообщение откроется в Telegram — администратор подтвердит удобное время.</span></div></li>
+   </ol>
+  </div>
+  <form id="form" novalidate>
+   <div class="f"><label for="fs">Услуга</label><select id="fs" required></select><div class="err" id="e-fs"></div></div>
+   <div class="f"><label for="fm">Мастер</label><select id="fm"></select></div>
+   <div class="f"><label for="fn">Имя</label><input id="fn" autocomplete="given-name" required><div class="err" id="e-fn"></div></div>
+   <div class="f"><label for="fc">Телефон или Telegram</label><input id="fc" autocomplete="tel" placeholder="+7 900 000-00-00 или @ник" required><div class="err" id="e-fc"></div></div>
+   <div class="f"><label for="ft">Удобные день и время <small>(необязательно)</small></label><input id="ft" placeholder="например, суббота после 15:00"></div>
+   <div class="f"><label for="fk">Комментарий <small>(необязательно)</small></label><textarea id="fk"></textarea></div>
+   <button class="btn" type="submit">Подготовить сообщение</button>
+   <p class="note">Заявка никуда не отправляется автоматически. По кнопке откроется Telegram с готовым текстом — отправляете его вы сами. Запись считается подтверждённой только после ответа администратора.</p>
+   <div class="out" id="out" aria-live="polite"><b>Сообщение готово:</b><pre id="msg"></pre><a class="btn" id="tg" target="_blank" rel="noopener">Открыть Telegram</a></div>
+  </form>
+ </div>
+</section>
+
+<section id="contacts" aria-labelledby="hc">
+ <div class="wrap two rv">
+  <div>
+   <h2 id="hc">Адрес и график</h2>
+   <p id="addr" style="font-weight:500"></p>
+   <dl class="h" id="hours"></dl>
+   <div class="cta"><a class="btn" id="route" target="_blank" rel="noopener">Построить маршрут</a><a class="btn ghost" id="callBtn"></a></div>
+  </div>
+  <div class="art cover" style="aspect-ratio:4/3" role="img" aria-label="Схематичная иллюстрация расположения">
+   <img src="images/map-scheme.svg" width="400" height="300" alt="" loading="lazy">
+  </div>
+ </div>
+</section>
+
+<section class="final" aria-labelledby="hf">
+ <div class="wrap rv">
+  <h2 id="hf">Готов к свежей стрижке?</h2>
+  <p class="lead">Выберите услугу, напишите нам — подтвердим время в течение рабочего дня.</p>
+  <div class="cta"><a class="btn" href="#booking" data-book>Записаться</a><a class="btn ghost" id="tgDirect" target="_blank" rel="noopener">Написать в Telegram</a><a class="btn ghost" id="callBtn2"></a></div>
+ </div>
+</section>
+</main>
+<footer>
+ <div class="wrap">
+  <div><b id="fName"></b><br>© <span id="yr"></span></div>
+  <div id="fContacts"></div>
+  <div>Форма не сохраняет данные на сервере: имя и контакт передаются только в ваше сообщение в Telegram.</div>
+ </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
